@@ -17,7 +17,12 @@ $(function () { //////////////jQB ////////////////////
         $(".main_wrap").css({
             overflow: "hidden"
         });
-
+        
+         /* 햄버거 바 */
+        $(".hambar").hover(function () {
+            $(this).toggleClass(".is-active");
+        });
+        
         /* 마우스 커서 변경 !! */
         $(".museum_list_wrap").mouseenter(function () {
             $("#cursor").addClass("museum_list_cursor");
@@ -37,7 +42,8 @@ $(function () { //////////////jQB ////////////////////
             
         });
 
-
+        /* 페이지 변경 */
+        
         $(".pwrap").on("mousewheel", function (e) {
 
             if (firstAct === 0) {
@@ -100,15 +106,11 @@ $(function () { //////////////jQB ////////////////////
             }) ///////////////// mouewheel /////////////////////////////////////////
 
 
-        $(".hambar").hover(function () {
-            $(this).toggleClass(".is-active");
-        });
-
 
         var link = [
-                "serve_one.html",
-                "serve_one.html",
-                "serve_one.html"
+                "serve.html",
+                "serve.html",
+                "serve.html"
             ];
 
         $(".museum_list_box").click(function () {
@@ -137,7 +139,7 @@ $(function () { //////////////jQB ////////////////////
 
     /*///////////////////////////////////
         함수명: chgRing
-        기능: 미술관이름 현재페이지에 맞게 변경하기
+        기능: 미술관로딩링 현재페이지에 맞게 변경하기
     ///////////////////////////////////////////////*/
     function chgRing() {
 
