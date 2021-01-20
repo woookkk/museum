@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* common.css - 공통 레이아웃 디자인 */
+
+/***************** 푸터 영역 ***********************/
+.c7h1 {
+    text-align: center;
+}
+
+.footer_wrap {
+    background-color: #222;
+}
+
+.footer_wrap_area {
+    padding-top: 50px;
+}
+
+.footer_wrap_area p {
+    color: #ccc;
+    padding-bottom: 50px;
+    font-size: .7rem;
+}
+
+.footer_sns {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 23px 0;
+}
+
+.footer_sns li {
+    margin-right: 40px;
+}
+
+.footer_sns li:last-child {
+    margin-right: 0;
+}

@@ -1,0 +1,624 @@
+@charset "utf-8";
+/* main.css - 메인페이지 CSS */
+
+
+/*파일 merging(합치기)*/
+@import url(../css/reset.css);
+@import url(../css/core.css);
+@import url(../css/common.css);
+@import url(../css/gridSet.css);
+@import url(../css/gridView.css);
+
+body {
+    overflow-x: hidden;
+    overflow-y: visible;
+    background-color: #f4f4f4;
+
+}
+
+a {
+    cursor: none;
+}
+
+/* 마우스 커서 */
+
+.cursor::after {
+    content: "Click";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    top: -11px;
+    left: -11px;
+    color: #fff;
+    border: 8px solid rgba(204, 204, 204, 0.7);
+    border-radius: 50%;
+    font-family: 'CrimsonText-Italic';
+    font-size: 1.1rem;
+    animation: cursorAni2 .5s infinite alternate;
+}
+
+@keyframes cursorAni2 {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(.7)
+    }
+}
+
+.drag_C::after {
+    content: "drag!";
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-family: 'CrimsonText-Italic';
+    font-size: 1.1rem;
+    font-weight: bold;
+    z-index: 999999;
+}
+
+
+/***************** 인트로 페이지***********************/
+
+.first_intro {
+    background-color: #f4f4f4;
+}
+
+#first_intro {
+    position: relative;
+}
+
+/*
+.sideBG::before{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: calc(100% - 500px);
+    height: 100%;
+    background-color: #e6e2dd;
+}
+*/
+
+
+#first_intro > .fbx {
+    /*    flex-wrap: nowrap;*/
+}
+
+.c3h1 {
+    position: relative;
+}
+
+.sub_logo_box {
+    position: absolute;
+    width: 8vW;
+    top: 5%;
+    left: 30%;
+}
+
+.intro_logo img {
+    width: 100%;
+}
+
+.first_intro_text_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.first_intro_text {
+    margin-bottom: 30px;
+    padding-left: 30px;
+    color: #555150;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.first_intro_text h3 {
+    padding-bottom: 50px;
+    font-weight: 900;
+}
+
+.c3h2 {
+    background-color: #e6e2dd;
+}
+
+/* 인트로 영역 사진 */
+.sub_info_img {
+    padding-top: 20%;
+}
+
+.sub_info_img img {
+    width: 100%;
+}
+
+/******** 인트로 바 *******/
+.intro_bar_wrap {
+    position: relative;
+}
+
+.intro_bar {
+    position: fixed;
+    top: 15%;
+    width: 100%;
+    /*    padding-left: 5%;*/
+    z-index: 999;
+}
+
+.intro_title {
+    width: 100%;
+    padding: 0 0 2% 3%;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.intro_title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    height: 3px;
+    background-color: #fff;
+
+}
+
+.intro_bar_list {
+    line-height: 2.5;
+    padding-left: 3%;
+    font-weight: 500;
+}
+
+.intro_bar_list li a {
+    display: block;
+    transition: all .75s 0s ease;
+    padding-right: 2%;
+}
+
+
+/***************** 전시 영역 **********************/
+
+.first_exhibit_wrap {
+    background-color: #f4f4f4;
+}
+
+#first_exhibit_wrap {
+    /*    position: relative;*/
+    height: 100%;
+    width: 100%;
+}
+
+.c4h1 {
+    margin: 10% 0;
+    background-color: #fff;
+    height: 60vh;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.exhibit_drag {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.first_exhibit_img {
+    position: relative;
+    width: 200%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.first_exhibit_img_list {
+    position: relative;
+    float: left;
+    width: 22%;
+    margin-right: 3%;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.first_exhibit_img_list:last-child {
+    margin-right: 0;
+}
+
+.first_exhibit_img a {
+    display: block;
+}
+
+.first_exhibit_img_list:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-bottom: 4px;
+    background-color: rgb(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+.first_exhibit_img_list img {
+    width: 100%;
+    height: 100%;
+}
+
+.first_exhibit_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    transition: opacity .3s ease-in;
+    z-index: 99;
+    opacity: 0;
+}
+
+/*
+
+.first_exhibit_text:hover {
+    opacity: 1;
+    z-index: 1;
+}
+*/
+
+.c4h3 {
+    background-color: #e6e2dd;
+}
+
+.first_exhibit_title {
+    position: absolute;
+    top: -11%;
+    z-index: 999;
+    left: 25%;
+}
+
+.first_exhibit_title li {
+    font-family: 'CrimsonText-Italic';
+    font-size: 3.1rem;
+    line-height: .8;
+    font-weight: bold;
+}
+
+
+/******** 시설 영상  *******/
+.c4h2 {
+    height: 600px;
+    margin-bottom: 10%
+}
+
+
+/*
+#exhibit_video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}*/
+
+.first_exhibit_video {
+    position: relative;
+    top: 50%;
+    width: 1000px;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+.first_exhibit_video a {
+    display: block;
+}
+
+.first_exhibit_video img {
+    width: 100%;
+}
+
+/* 비디오 모달 창 */
+#video_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: none;
+}
+
+/* 비디오사이즈 */
+#vidSizer {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200vh;
+    max-width: 95%;
+
+}
+
+#vidHolder {
+    position: relative;
+    height: 0;
+    padding-bottom: 54.25%;
+}
+
+#exhibit_video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.video_modal_close {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    transition: 1.0s ease all;
+}
+
+.video_modal_close:hover {
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 1.0s ease all;
+}
+
+/******* 전시 팝업 *******/
+.first_exhibit_popup_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgb(166, 171, 165, 0.9);
+    display: none;
+}
+
+.first_exhibit_popup_area {
+    width: 1380px;
+    margin: 0 auto;
+
+}
+
+.first_exhibit_popup {
+    float: left;
+}
+
+.first_exhibit_popup img {
+    display: block;
+    padding-top: 35px;
+}
+
+.first_exhibit_popup_text {
+    float: left;
+    color: #fff;
+    margin-left: 100px;
+}
+
+.first_exhibit_popup_text h2 {
+    font-size: 2rem;
+    padding: 40px 0 120px 0;
+}
+
+.first_exhibit_popup_text p {
+    font-size: 1.25rem;
+    margin-bottom: 222px;
+    line-height: 1.5;
+}
+
+.first_exhibit_popup_info li {
+    float: left;
+    margin-right: 70px;
+    font-size: .9rem;
+}
+
+.first_exhibit_popup_info h3 {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.close_btn {
+    position: absolute;
+    top: 35px;
+    right: 70px;
+}
+
+/***************** 지도 - 다섯번째 페이지*******************/
+
+.first_map_wrap {
+    background-color: #fff;
+}
+
+#first_map_wrap {
+    position: relative;
+}
+
+.first_map_title {
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    font-family: 'CrimsonText-Italic';
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
+.col-3 {
+    position: relative;
+}
+
+.first_map_address {
+    position: absolute;
+    top: 45%;
+    line-height: 2;
+}
+
+.first_map_address span {
+    display: inline-block;
+    padding-bottom: 5%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.map_road_title {
+    display: inline-block;
+    padding: 2% 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.road_indent {
+    display: inline-block;
+    width: 100%;
+    text-indent: 20%;
+}
+
+.c5h1 {
+    height: 40%;
+    padding-top: 20%;
+}
+
+.c5h3 {
+    background-color: #e6e2dd;
+}
+
+.sub_map_box {
+    height: 60vh;
+    width: 80%;
+    margin: 5% auto 10%;
+}
+
+.first_map_text {
+    position: relative;
+    padding-bottom: 10%;
+}
+
+.first_map_road {
+    position: absolute;
+    top: 20%;
+    color: #4a473c;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    /*높이값을 주고 넘치는 요소 자동설정하면 자동스크롤바생성!*/
+}
+
+.first_map_road p:nth-child(2) {
+    padding: 2% 0;
+}
+
+.c5h2 {
+    text-align: center;
+}
+
+.first_map {
+    height: 95%;
+    width: 95%;
+}
+
+/***************** 여섯번째 페이지 에티켓**********************/
+
+.etiquette_wrap {
+    background-color: #f4f4f4;
+}
+
+#etiquette_wrap {
+    position: relative;
+}
+
+.c6h1 {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.etiquette_header h2 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 3%;
+    font-family: kakao;
+}
+
+.etiquette_header h2::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #7f7c7c;
+}
+
+.etiquette_header p {
+    margin: 3% 0 5%;
+    line-height: 2;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.etiquette_header small {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+/* 에티켓 이미지 */
+.sub_etiquette_img {
+    width: 400px;
+}
+
+.sub_etiquette_img img {
+    width: 100%;
+}
+
+.c6h2 {
+    width: 100%;
+    height: 110vh;
+}
+
+.etiquette_text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+}
+
+.etiquette_text dt {
+    font-weight: 900;
+    margin-bottom: 27px;
+}
+
+.etiquette_text dd {
+    margin-bottom: 40px;
+    line-height: 27px;
+}
+
+.etiquette_text_left {
+    text-align: right;
+}
+
+.etiquette_text_right {
+    text-align: left;
+}
+
+.etiquette_text_right dd {
+    margin-left: 0;
+}
+
+.c6h3 {
+    background-color: #e6e2dd;
+}

@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* core.css - 중요공통기능 */
+
+/*웹폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: kakao;
+    src: url(../KakaoRegular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CrimsonText-Italic';
+    src: url(../fonts/Crimson_Text/CrimsonText-Italic.ttf) format('truetype'), url(../font/Crimson_Text/CrimsonText-Italic.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*font-family: 'Nanum Myeongjo', serif;*/
+/*font-family: 'Maven Pro', sans-serif;*/
+/*font-family: 'Noto Sans KR', sans-serif;*/
+/*
+
+[ 웹폰트지정형식 ]
+@font-face {
+    font-family: 내가지은이름;
+    src: url(경로.woff) format("woff"),
+        url(경로.ttf) format("truetype")
+}
+- woff 는 데스크탑 브라우저용 웹폰트 확장자
+- ttf 는 모바일 브라우저용 웹폰트 확장자
+- format(형식명) 은 명시적으로 확장자를 지정하여 웹폰트 로딩을 빠르게함!
+
+*/
+
+/*공통*/
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+    line-height: 136%;
+    font-size: 1rem;
+
+}
+
+/* 공통 class */
+
+/*중앙정렬 속박스*/
+.inbox {
+    width: 1920px;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+/*    outline: 1px dashed blue;*/
+}
+
+.fbx {
+    height: 100%;
+    display: flex;
+}
+
+/*이미지가 있는 경우 overflow:hidden*/
+.ioh {
+    overflow: hidden;
+}
+
+
+/************* 마우스 커서 *************/
+#cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #4a473c;
+    border-radius: 50%;
+    /*    animation: cursorAni .5s infinite alternate;*/
+    pointer-events: none;
+    z-index: 9999999;
+    transition: transform .3s;
+}
+.trC{/*transform Cursor*/
+    transform: scale(1.5);
+}
+
+@keyframes cursorAni {
+    from {
+        transform: scale(2.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+
+
+/******** 서브 페이지 ********/
+.sub_wrap {
+    overflow-x: hidden;
+
+}
+
+
+.sideBG::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: calc(100% - 500px);
+    height: 100%;
+    background-color: #e6e2dd;
+}
+
+.sideBG2::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 500%;
+    height: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/*개별적 부모자격 주기(parent)*/
+.prt {
+    position: relative;
+}
+
+
+/*스크롤바 공통 class*/
+.scbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scbar::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+}

@@ -1,0 +1,473 @@
+@charset "utf-8";
+/* main.css - 메인페이지 CSS */
+
+/*파일 merging(합치기)*/
+@import url(../css/reset.css);
+@import url(../css/core.css);
+@import url(../css/common.css);
+@import url(../css/gridSet.css);
+@import url(../css/gridView.css);
+
+
+
+/* 메인페이지 전용디자인*/
+
+/*검수용이미지*/
+.vi {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 55;
+    opacity: .5;
+    display: none;
+}
+
+
+body,
+html,
+.pwrap {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+a {
+    cursor: none;
+}
+
+/* 두번째 페이지 커서 */
+.museum_list_cursor {
+    width: 150px !important;
+    height: 150px !important;
+    border: none !important;
+    background-color: #db7a9a;
+    line-height: 1;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9999999;
+}
+
+.museum_list_cursor_T {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'CrimsonText-Italic';
+    font-weight: bold;
+    z-index: 99999999 !important;
+}
+
+/*************** 첫 페이지 *****************/
+.main_wrap {
+    position: relative;
+    background-color: #e6e2dd;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.c1h1 {
+    height: 10vh;
+}
+
+.c1h1 a {
+    display: block;
+    width: 8vw;
+    margin: 2% 0 0 3%;
+}
+
+.header_logo {
+    width: 100%;
+}
+
+.main_logo {
+    width: 10vw;
+    margin: -5% auto;
+}
+
+.main_logo img {
+    width: 100%;
+}
+
+/* 미술관 텍스트 */
+.c1h2_2 {
+    /*    margin-top: 5%;*/
+}
+
+.c1h2_2 span {
+    display: block;
+    padding-left: 6%;
+    font-family: 'CrimsonText-Italic';
+    font-size: 8vw;
+    text-align: center;
+    line-height: 1;
+    opacity: .9;
+}
+
+/* sns */
+
+.main_sns {
+    position: absolute;
+    height: 65%;
+    left: 50%;
+    bottom: -25%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+/* sns 호버 */
+/*.main_sns li{
+    transition: all .6s ease-out;
+}
+.main_sns li::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+}
+.main_sns li:hover::after{
+    transform-origin: center;
+    animation: snsAni .6s linear infinite;
+    opacity: 1;
+}
+
+@keyframes snsAni {
+    from{
+        transform: translate(-50%,-10%) scale(1);
+    }
+    to{
+        transform: translate(-50%,-10%) scale(1.4);
+    }
+}*/
+
+/* 스크롤 박스 */
+
+.main_scrollbox {
+    position: absolute;
+    width: 3vw;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scAni .5s linear infinite alternate;
+}
+
+.main_scrollbox img {
+    width: 100%;
+}
+
+/*인트로 스크롤바 애니*/
+
+@keyframes scAni {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
+
+
+
+
+/**************** 두번째 페이지 메인******************/
+
+
+/**********헤더 영역*******/
+
+.main_header_wrap {
+    display: flex;
+    width: 100%;
+    z-index: 999;
+    height: 20%;
+}
+
+.page_logo {
+    width: 100%;
+}
+
+.c2h1 {
+    height: 15vh;
+}
+
+.Hpage_logo a {
+    display: block;
+    width: 8vw;
+    margin: 10% auto 0;
+}
+
+.gnbShow {
+    position: absolute;
+    top: 7%;
+    right: 50px;
+    width: 500px;
+    text-align: right;
+}
+
+.gnbbox {
+    position: relative;
+    left: -10%;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gnbbox .gnb:hover {
+    position: absolute;
+    right: 10%;
+    width: 90%;
+}
+
+
+.hambar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hambar span {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 햄버거 메뉴 !! */
+.line1 {
+    width: 50px;
+    height: 5px;
+    background-color: #dedede;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.line2 {
+    width: 34px;
+    height: 5px;
+    background-color: #dedede;
+    display: block;
+}
+
+/*GNB숨김박스에 마우스 오버시 GNB들어오기*/
+.gnbShow:hover .gnb {
+    right: 0;
+    width: 85%;
+}
+
+.gnb {
+    position: absolute;
+    right: -500px;
+    transition: right .8s ease-out;
+}
+
+.gnb li {
+    float: left;
+}
+
+.gnb a {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: S-CoreDream-3Light;
+    margin-right: 35px;
+    color: #dedede;
+}
+
+/*
+
+.gnb li:last-child a {
+    margin-right: 0;
+}
+*/
+/*
+.gnb a:hover {
+    text-decoration: line-through;
+}
+.hambar {
+    float: right;
+    right: 0;
+}*/
+#museum_list_wrap {
+    position: relative;
+    height: 100%;
+}
+
+.museum_list_box {
+    position: fixed;
+    top: 0;
+    width: 1920px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/******** 배경 ********/
+.museum_list_wrap {
+
+    background-color: #f4f4f4;
+    height: 100%;
+    /*    min-width: 960px;*/
+    position: relative;
+    /* overflow: hidden;*/
+}
+
+.museum_slider {
+    position: relative;
+    width: 300%;
+    height: 100%;
+    display: flex;
+}
+
+.page {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+#page1 {
+    width: 100%;
+    background: url(../images/main_bg1.png) no-repeat 50% 90%;
+}
+
+#page2 {
+    width: 100%;
+    background: url(../images/main_bg2.png) no-repeat 50% 90%;
+}
+
+#page3 {
+    width: 100%;
+    background: url(../images/main_bg3.png) no-repeat 50% 70%;
+}
+
+.museum_namebox li {
+    position: absolute;
+    width: 100%;
+    left: 52%;
+    top: 12%;
+    text-shadow: 0 0 2px #000;
+    font-family: S-CoreDream-6Bold;
+    font-size: 3.5rem;
+    font-weight: normal;
+    color: #dedede;
+    z-index: 9999;
+    display: none;
+}
+
+/*선택된 class*/
+.museum_namebox li.on {
+    display: block;
+    /*선택메뉴 글자보이기*/
+}
+
+.c2h2 {
+    position: relative;
+}
+
+
+.museum_namebox::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 8rem;
+    top: 10%;
+    background-color: #222;
+    z-index: 999;
+}
+
+/*
+.museum_namebox::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    width: 500%;
+    height: 7rem;
+    top: 100%;
+    background-color: #222;
+    box-sizing: border-box;
+    z-index: 999;
+}*/
+
+.indicator {
+    position: absolute;
+    width: 100%;
+    bottom: 20%;
+}
+
+.indicator li {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 20%;
+    margin: 0 10% auto;
+    font-size: 1.8rem;
+    font-family: 'S-CoreDream-3Light';
+    font-weight: 600;
+    color: #dedede;
+    text-align: center;
+    line-height: 40px;
+}
+
+.indicator a {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    top: -4px;
+    left: 1px;
+    /*    outline: 1px solid blue;*/
+}
+
+.c1 {
+    fill: transparent;
+    /*채우기색(기본값은 검정색)*/
+    /*transparent 투명, none 설정없음*/
+    stroke: #CCC;
+    /*선색(안쓰면 없음)*/
+    stroke-width: 1.5;
+    /*선두께, 안쓰면 1px*/
+    stroke-linecap: round;
+    /*선끝둥글게(기타옵션:butt, round, square*/
+
+    /*데쉬선 넣기*/
+    stroke-dasharray: 300%;
+    /*데쉬선 밀기*/
+    stroke-dashoffset: 300%;
+}
+
+/*svg에 마우스 오버시 데쉬옵셋값 0으로!*/
+.indicator li.on .c1 {
+    animation: circleAni 12s linear forwards;
+}
+
+@keyframes circleAni {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+.c2h3_2 {
+    position: relative;
+    top: 0;
+    bottom: 50px;
+}

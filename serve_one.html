@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>서울시립미술관</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/smoothScroll20.js"></script>
+    <script src="js/curtains.umd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/serve.js"></script>
+
+</head>
+
+<body>
+    <!-- 따라다닐 커서 -->
+    <div id="cursor" class="cursor drag_C"></div>
+
+    <div class="sub_wrap prt">
+        <!-- 인트로 페이지 영역 -->
+        <div class="first_intro">
+            <section class="inbox sideBG" id="first_intro">
+                <div class="fbx">
+                    <div class="col-1 c3h1">
+                        <h1 class="sub_logo_box">
+                            <a href="index.html" class="intro_logo"><img src="images/logo_allpage.png" alt="로고">
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-1 c3h1"></div>
+                    <div class="col-5 c3h1 ioh">
+                        <div class="sub_info_img">
+                            <img src="images/museum_sub.png" alt="서소문소개" id="sub_info_img">
+                        </div>
+                    </div>
+                    <div class="col-3 c3h1 first_intro_text_wrap">
+                        <div class="first_intro_text">
+                            <h3>
+                                서울시립미술관은<br><br>
+
+                                ‘여럿이 만드는 미래, 모두가 연결된 미술관’을<br>
+                                지향하며 세계적인 미술관으로 도약하고 있습니다.
+                            </h3>
+
+                            아시아의 중심도시인<br>
+                            대한민국 수도 서울의 대표 미술관으로서<br>
+                            세계성과 지역성, 전문성과 대중성을 아우르는<br>
+                            다양한 기획전과 특별전을 개최하고,<br>
+                            맞춤형 교육 및 국제교류 프로그램 등을 운영합니다.<br><br>
+
+                            2002년 5월 17일 개관
+                        </div>
+                    </div>
+                    <div class="col-2 c3h2 intro_bar_wrap">
+                        <div class="intro_bar">
+                            <h3 class="intro_title">INTRODUCTION</h3>
+                            <ul class="intro_bar_list">
+                                <li><a href="#first_intro">ⅰ&nbsp; 소개</a></li>
+                                <li><a href="#first_exhibit_wrap">ⅱ&nbsp; 전시/교육/행사</a></li>
+                                <li><a href="#first_video_wrap">ⅲ&nbsp; 시설영상</a></li>
+                                <li><a href="#first_map_wrap">ⅳ&nbsp; 찾아오시는 길</a></li>
+                                <li><a href="#etiquette_wrap">ⅴ&nbsp; 관람 에티켓</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 전시 영역 -->
+        <div class="first_exhibit_wrap prt">
+            <section class="inbox prt sideBG" id="first_exhibit_wrap">
+                <div class="fbx">
+                    <div class="col-2 c4h1 prt sideBG2 dragCW">
+                        <ul class="first_exhibit_title">
+                            <li>EXHIBIT</li>
+                            <li>EDUCATION</li>
+                            <li>EVENT</li>
+                        </ul>
+                    </div>
+                    <div class="col-8 c4h1 prt hidden dragCW">
+                        <div class="exhibit_drag">
+                            <ul class="first_exhibit_img">
+                                <li class="first_exhibit_img_list">
+                                    <a href="#"><img src="images/exhibit_6.png" alt="전시"></a>
+                                    <ol class="first_exhibit_text">
+                                        <li>전시</li>
+                                        <li>특별</li>
+                                        <li>&lt; SeMA-카페+ 2020 주어진 &gt;</li>
+                                    </ol>
+                                </li>
+                                <li class="first_exhibit_img_list">
+                                    <a href="#"><img src="images/exhibit_1.png" alt="전시"></a>
+                                    <ol class="first_exhibit_text">
+                                        <li>전시</li>
+                                        <li>가나아트컬렉션</li>
+                                        <li>&lt; 허스토리 리뷰 &gt;</li>
+                                    </ol>
+                                </li>
+                                <li class="first_exhibit_img_list">
+                                    <a href="#"><img src="images/exhibit_4.png" alt="전시"></a>
+                                    <ol class="first_exhibit_text">
+                                        <li>전시</li>
+                                        <li>퍼포먼스</li>
+                                        <li>&lt;하나의 사건 This Event&gt;</li>
+                                    </ol>
+                                </li>
+
+                                <li class="first_exhibit_img_list">
+                                    <a href="#"><img src="images/exhibit_3.png" alt="전시"></a>
+                                    <ol class="first_exhibit_text">
+                                        <li>전시</li>
+                                        <li>한국화</li>
+                                        <li>&lt; 영원한 나르시시스트, 천경자 &gt;</li>
+                                    </ol>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-2 c4h3 sideBG2"></div>
+                </div>
+            </section>
+        </div>
+        <!-- 시설 영상 영역 -->
+        <div class="first_video_wrap sideBG2">
+            <!-- 시설 영상 모달 -->
+            <div id="video_modal">
+                <div id="vidSizer">
+                    <div id="vidHolder">
+                        <iframe name="exhibit_video" id="exhibit_video" src="https://www.youtube.com/embed/U3ZYO2hwpuY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video_modal_close">
+                    <img src="images/close_btn.png" alt="영상모달창닫기">
+                </div>
+            </div>
+
+            <section class="inbox sideBG2 " id="first_video_wrap">
+                <div class="fbx">
+                    <div class="col-10 c4h2">
+                        <div class="first_exhibit_video">
+                            <a href="#"><img src="images/video.png" alt="미술관시설 썸네일"></a>
+                        </div>
+                    </div>
+                    <div class="col-2 c4h3"></div>
+                </div>
+            </section>
+        </div>
+        <!--------------- 지도 다섯번째 페이지  --------->
+        <div class="first_map_wrap">
+            <section class="inbox sideBG" id="first_map_wrap">
+                <div class="fbx">
+                    <div class="col-2 c5h1 prt">
+                        <h3 class="first_map_title">MAP</h3>
+                    </div>
+                    <div class="col-3 c5h1">
+                        <p class="first_map_address">
+                            <span>주소</span> <br>
+                            서울 중구 덕수궁길 61 (서소문동) <br>
+                            문의 및 연락처 (02) 2124-8800
+                        </p>
+                    </div>
+                    <div class="col-5 c5h1 first_map_text">
+                        <div class="first_map_road scbar">
+                            <p>
+                                <span class="map_road_title">지하철</span><br>
+                                1호선 : 시청역 1번 출구 (서울시청 서소문청사방면)<br>
+                                2호선 : 시청역 11번 출구나 12번 출구, 10번 출구<br>
+                                5호선 : 서대문역 5번 출구나 광화문역 6번 출구
+                            </p>
+                            <p>
+                                <span class="map_road_title">버스</span><br>
+                                파랑(간선)버스 : 172, 472, 600, 602
+                            </p>
+                            <p>
+                                <span class="map_road_title">자가용</span><br>
+                                광화문 방향 : 덕수궁 정문에서 우측의 샛길로 우회전<br>
+                                남대문 방향 : 광화문까지 직진하여 광화문 앞에서 U턴 후 덕수궁까지 <br>
+                                <span class="road_indent">직진하여덕수궁 정문에서 우측의 샛길로 우회전</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2 c5h3"></div>
+                    <div class="col-10 c5h2 ioh">
+                        <div class="sub_map_box">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.619595543007!2d126.97159061526976!3d37.56402527979832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca28c905d0a87%3A0x86628ac3defab4ec!2z7ISc7Jq47Iuc66a966-47Iig6rSA!5e0!3m2!1sko!2skr!4v1610348312025!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-2 c5h3"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-------------------- 여섯번째 페이지  ------------->
+        <div class="etiquette_wrap">
+            <section class="inbox sideBG" id="etiquette_wrap">
+                <div class="fbx">
+                    <div class="col-10 c6h1">
+                        <div class="etiquette_header">
+                            <h2>관람에티켓</h2>
+                            <p>
+                                상대방을 배려하는 관람 문화를 만들어 주시기 바랍니다.<br>
+                                <small>미술관 내 정숙, 핸드폰 사용 금지, 미술관 내 애완동물 반입금지, 미술관 내 모든 지역 금연입니다<br>
+                                    상대방을 배려하여 다 함께 즐길 수 있는 관람환경을 만들어 주시기 바랍니다.</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2 c6h3"></div>
+                    <div class="col-10 c6h2 prt">
+                        <div class="etiquette_text">
+                            <dl class="etiquette_text_left">
+                                <dt>
+                                    기본적으로 관람 시 사진촬영을 금합니다.
+                                </dt>
+                                <dd>
+                                    전시 작품의 저작권 보호를 위하여<br>
+                                    허락 없이 작품을 촬영할 수 없습니다.<br><br>
+                                    특히 전시장에서 터지는 플래시는 <br>
+                                    다른 관람객들의 관람에 방해를 줄 수 있으며,<br>
+                                    작품 보존에도 나쁜 영향을 미칠 수 있습니다.
+                                </dd>
+                                <dt>
+                                    음식물 반입을 금지합니다.
+                                </dt>
+                                <dd>
+                                    쾌적한 관람과 작품의 보호를 위하여<br>
+                                    드시고 남은 음식물은 가지고 들어오실 수 없습니다.<br>
+                                    음식물은 카페테리아를 이용해 주시기 바랍니다.
+                                </dd>
+                                <dt>
+                                    작품보호선(Border Rail)을 지켜주세요.
+                                </dt>
+                                <dd>
+                                    작품을 자세히 보기 위하여 작품에 바싹 다가서면<br>
+                                    다른 관람객에게 불쾌감을 줄 수 있으며,<br>
+                                    작품에 치명적인 손상을 줄 수 있습니다.<br>
+                                    작품 앞 보호대(Border Rail)가 설치된 경우<br>
+                                    보호선(Border Rail) 밖에서 관람해 주시기 바랍니다.
+                                </dd>
+                            </dl>
+                            <div class="sub_etiquette_img">
+                                <img src="images/etiquette.png" alt="에티켓" class="etiquette_img">
+                            </div>
+                            <dl class="etiquette_text_right">
+                                <dt>
+                                    동선을 따라 이동하시면 편리합니다.
+                                </dt>
+                                <dd>
+                                    전시장이 붐비는 경우 바닥에 표시된<br>
+                                    동선을 따라 이동하시면 편리합니다.<br><br>
+                                    동선은 전시 공간의 작품들을<br>
+                                    보다 쉽고 올바르게 감상하기 위한<br>
+                                    길잡이가 될 수 있습니다.
+                                </dd>
+                                <dt>
+                                    부피가 큰 소지품은 보관함을 이용해 주세요.
+                                </dt>
+                                <dd>
+                                    오랜 시간 전시를 관람하는 경우,<br>
+                                    피로감을 줄 뿐 아니라 다른 사람을 방해할 수 있으며, <br>
+                                    조소작품인 경우 작품을 건드릴 위험이 있습니다. <br>
+                                    부피가 큰 소지품이나 외투, <br>
+                                    이동이 불편한 짐 등은 입구의 물품 보관함을 <br>
+                                    이용하여 개인별 보관해 주시기 바랍니다.
+                                </dd>
+                                <dt>
+                                    유모차와 휠체어를 대여하실 수 있습니다.
+                                </dt>
+                                <dd>
+                                    12개월 이하의 영아를 동반한 관람객이나<br>
+                                    장애인 관람객의 편안한 관람을 돕기 위하여 <br>
+                                    1층 안내 데스크에서 유모차와 휠체어를 <br>
+                                    대여해 드리고 있습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="col-2 c6h3"></div>
+                </div>
+            </section>
+        </div>
+        <!-------------------- 푸터 페이지  ------------->
+        <footer class="footer_wrap">
+            <section class="inbox" id="footer_wrap">
+                <div class="fbx">
+                    <div class="col-12 c7h1">
+                        <div class="footer_wrap_area">
+                            <img src="images/logo_footer.png">
+                            <ul class="footer_sns">
+                                <li><a href="#"><img src="images/footer_face.png" alt="푸터페이스북"></a></li>
+                                <li><a href="#"><img src="images/footer_twi.png" alt="푸터트위터"></a></li>
+                                <li><a href="#"><img src="images/footer_ear.png" alt="푸터듣기"></a></li>
+                                <li><a href="#"><img src="images/footer_yout.png" alt="푸터유투브"></a></li>
+                            </ul>
+                            <p>
+                                주소 : (04515) 서울 중구 덕수궁길 61<br>
+                                서울 시립 미술관 문의 : 02-2124-8800 이메일 : sema@seoul.go.kr
+                                <br><br>
+                                ©2018 Seoul Museum of Art All rights reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+
+
+</body></html>
