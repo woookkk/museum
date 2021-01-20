@@ -33,7 +33,7 @@
     flex-shrink: 0;/*0은 따라줄지마*/
     /*flex-basis만 적용되게함!*/
     box-sizing: border-box;
-/*    outline: 1px dashed red;*/
+    outline: 1px dashed red;
 }
 /*
     [] 대괄호는 속성을 선택하는 CSS 선택자 기호임!

@@ -183,15 +183,11 @@ a {
 
 
 /***************** 전시 영역 **********************/
-
+#first_exhibit_wrap{
+    position: relative;
+}
 .first_exhibit_wrap {
     background-color: #f4f4f4;
-}
-
-#first_exhibit_wrap {
-    /*    position: relative;*/
-    height: 100%;
-    width: 100%;
 }
 
 .c4h1 {
@@ -293,6 +289,9 @@ a {
 
 
 /******** 시설 영상  *******/
+#first_video_wrap{
+    position: relative;
+}
 .c4h2 {
     height: 600px;
     margin-bottom: 10%
