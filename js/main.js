@@ -8,122 +8,130 @@ $(function () { //////////////jQB ////////////////////
     const totnum = 3;
     var psts = 1; // 광클 금지
 
-    $(function () { /// jQB /////////////////
 
-        /* $(".intro_bar").hide();*/
+    /* $(".intro_bar").hide();*/
 
-        var firstAct = 0; //실행여부
+    var firstAct = 0; //실행여부
 
-        $(".main_wrap").css({
-            overflow: "hidden"
-        });
-        
-         /* 햄버거 바 */
-        $(".hambar").hover(function () {
-            $(this).toggleClass(".is-active");
-        });
-        
-        /* 마우스 커서 변경 !! */
-        $(".museum_list_wrap").mouseenter(function () {
-            $("#cursor").addClass("museum_list_cursor");
-            $("#cursor").addClass("museum_list_cursor_T").html(" Scroll &<br>Click to<br> Explore!");
-            
-        });
-        
-        $(".gnbShow, .gnb, .hambar, .Hpage_logo a").mouseenter(function () {
-            $("#cursor").removeClass("museum_list_cursor");
-            $("#cursor").removeClass("museum_list_cursor_T").html("");
-            
-        });
-
-        $(".gnbShow, .gnb, .hambar, .Hpage_logo a").mouseleave(function () {
-            $("#cursor").addClass("museum_list_cursor");
-            $("#cursor").addClass("museum_list_cursor_T").html("Scroll &<br>Click to<br> Explore!");
-            
-        });
-
-        /* 페이지 변경 */
-        
-        $(".pwrap").on("mousewheel", function (e) {
-
-            if (firstAct === 0) {
-                firstAct = 1; //잠금!
-                $(".main_wrap").stop().animate({
-                    height: "0"
-                }, 2000, "easeOutQuint", function () {
-                    psts = 0;
-                }); //// animate //////
-            } //////////// if /////////////
+    $(".main_wrap").css({
+        overflow: "hidden"
+    });
 
 
-        }); ////// 마우스휠 /////////////////////////
+    /* 햄버거 바 */
+    $(".hambar").hover(function () {
+        $(this).toggleClass(".is-active");
+    });
 
 
-        // 한페이지 크기를 윈도우 가로 크기로 계산
-        var winW = $(window).width();
+    // 외부영역 클릭 시 팝업 닫기
+    $(document).mouseup(function (e) {
+        var LayerPopup = $(".login_wrap");
+        if (LayerPopup.has(e.target).length === 0) {
+            LayerPopup.removeClass("show");
+        }
+    });
 
-        $(".museum_list_wrap").on("mousewheel DOMMouseScroll",
-            function (e) {
-                if (psts === 1) return true; //돌아가 !
-                psts = 1; // 잠금(기존0값을 변경)
-                setTimeout(function () {
-                    psts = 0;
-                }, 600); ///// 타임아웃 //////
+    /* 마우스 커서 변경 !! */
+    $(".museum_list_wrap").mouseenter(function () {
+        $("#cursor").addClass("museum_list_cursor");
+        $("#cursor").addClass("museum_list_cursor_T").html(" Scroll &<br>Click to<br> Explore!");
 
-                e = window.event || e;
-                var delta = e.detail ? e.detail : e.wheelDelta;
+    });
 
-                if (delta < 0) {
-                    pno++;
-                    if (pno === totnum) pno = 0;
-                    chgMenu();
-                    chgRing();
+    $(".gnbShow, .gnb, .hambar, .Hpage_logo a").mouseenter(function () {
+        $("#cursor").removeClass("museum_list_cursor");
+        $("#cursor").removeClass("museum_list_cursor_T").html("");
 
-                } /// if ///////
-                else {
-                    pno--;
-                    if (pno === -1) pno = totnum - 1;
-                    chgMenu();
-                    chgRing();
-                } ///else ////
-                console.log("페이지번호:" + pno);
+    });
 
-                //4. 해당순번 페이지 left 위치값 구하기(top값)
-                var pgpos = winW * pno;
+    $(".gnbShow, .gnb, .hambar, .Hpage_logo a").mouseleave(function () {
+        $("#cursor").addClass("museum_list_cursor");
+        $("#cursor").addClass("museum_list_cursor_T").html("Scroll &<br>Click to<br> Explore!");
 
-                console.log("이동페이지위치:" + pgpos);
+    });
 
-                //5.페이지 이동 애니메이션
-                $(".museum_slider").stop().animate({
-                    left: -pgpos + "px"
-                }, 600, "easeOutQuint")
+    /* 페이지 변경 */
 
-                //6. 메뉴변경함수 호출하기
+    $(".pwrap").on("mousewheel", function (e) {
+
+        if (firstAct === 0) {
+            firstAct = 1; //잠금!
+            $(".main_wrap").stop().animate({
+                height: "0"
+            }, 2000, "easeOutQuint", function () {
+                psts = 0;
+            }); //// animate //////
+        } //////////// if /////////////
+
+
+    }); ////// 마우스휠 /////////////////////////
+
+
+    // 한페이지 크기를 윈도우 가로 크기로 계산
+    var winW = $(window).width();
+
+    $(".museum_list_wrap").on("mousewheel DOMMouseScroll",
+        function (e) {
+            if (psts === 1) return true; //돌아가 !
+            psts = 1; // 잠금(기존0값을 변경)
+            setTimeout(function () {
+                psts = 0;
+            }, 600); ///// 타임아웃 //////
+
+            e = window.event || e;
+            var delta = e.detail ? e.detail : e.wheelDelta;
+
+            if (delta < 0) {
+                pno++;
+                if (pno === totnum) pno = 0;
                 chgMenu();
                 chgRing();
 
+            } /// if ///////
+            else {
+                pno--;
+                if (pno === -1) pno = totnum - 1;
+                chgMenu();
+                chgRing();
+            } ///else ////
+            console.log("페이지번호:" + pno);
 
-            }) ///////////////// mouewheel /////////////////////////////////////////
+            //4. 해당순번 페이지 left 위치값 구하기(top값)
+            var pgpos = winW * pno;
+
+            console.log("이동페이지위치:" + pgpos);
+
+            //5.페이지 이동 애니메이션
+            $(".museum_slider").stop().animate({
+                left: -pgpos + "px"
+            }, 600, "easeOutQuint")
+
+            //6. 메뉴변경함수 호출하기
+            chgMenu();
+            chgRing();
+
+
+        }) ///////////////// mouewheel /////////////////////////////////////////
 
 
 
-        var link = [
+    var link = [
                 "serve.html",
                 "serve.html",
                 "serve.html"
             ];
 
-        $(".museum_list_box").click(function () {
+    $(".museum_list_box").click(function () {
 
-            console.log(pno + "번째");
+        console.log(pno + "번째");
 
-            location.href = link[pno];
+        location.href = link[pno];
 
-        }); ///////click ///////////
+    }); ///////click ///////////
 
 
 
-    }); ///// jQB /////////////////////////
 
     /*///////////////////////////////////
         함수명: chgMenu
