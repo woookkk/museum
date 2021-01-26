@@ -159,6 +159,19 @@ $(function () { ///////// jQB ////////
         $("#video_modal").fadeOut(300);
         $("#exhibit_video").attr("src", "");
     }); ///////// click /////////////
+    
+    /* 지도 맵에서 마우스커서 빼기 */
+    $(".sub_map_box").mouseenter(function(){
+       //console.log("보여커서????"); 
+        $("#cursor").css({
+            display:"none"
+        });///// css //////
+    });///////// mouseenter /////////
+    $(".sub_map_box").mouseleave(function(){
+        $("#cursor").css({
+            display:"block"
+        });///// css //////
+    });/////////////// mouseleave ///////
 
 
 }); ///////////// jQB /////////////

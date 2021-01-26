@@ -4,7 +4,7 @@ $(function(){////////////// jQB ////////////////
 
     $("#cursor").removeClass("cursor drag_C");
 
-    $("body").mousemove(function (e) { // e-이벤트전달
+    $("body").mousemove(function (e) { 
         var posx = e.pageX - 25;
         var posy = e.pageY - 25;
         // console.log("x축:"+posx+"\ny축:"+posy);

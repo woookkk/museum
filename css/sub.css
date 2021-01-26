@@ -275,14 +275,14 @@ a {
 
 .first_exhibit_title {
     position: absolute;
-    top: -11%;
+    top: -10%;
     z-index: 999;
     left: 25%;
 }
 
 .first_exhibit_title li {
     font-family: 'CrimsonText-Italic';
-    font-size: 3.1rem;
+    font-size: 3.5rem;
     line-height: .8;
     font-weight: bold;
 }
