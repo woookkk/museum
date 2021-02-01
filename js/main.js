@@ -78,6 +78,8 @@ $(function () { //////////////jQB ////////////////////
             setTimeout(function () {
                 psts = 0;
             }, 600); ///// 타임아웃 //////
+        
+        clearInterval(autoI);
 
             e = window.event || e;
             var delta = e.detail ? e.detail : e.wheelDelta;
@@ -113,6 +115,25 @@ $(function () { //////////////jQB ////////////////////
 
 
         }) ///////////////// mouewheel /////////////////////////////////////////
+
+    let autoI;
+    autoI = setInterval(function () {
+        pno++;
+        if (pno === 3) pno = 0;
+
+        var pgpos = winW * pno;
+
+        console.log("이동페이지위치:" + pgpos);
+
+        //5.페이지 이동 애니메이션
+        $(".museum_slider").stop().animate({
+            left: -pgpos + "px"
+        }, 600, "easeOutQuint")
+
+        //6. 메뉴변경함수 호출하기
+        chgMenu();
+        chgRing();
+    }, 3000);
 
 
 
