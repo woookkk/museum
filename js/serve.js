@@ -90,18 +90,11 @@ $(function () { ///////// jQB ////////
     });*/
 
     /************* 전시 호버 효과 *************/
-    $(".first_exhibit_img>li").hover(function (e) {
+    $(".first_exhibit_img_list").hover(function (e) {
         e.stopPropagation();
-        $(".first_exhibit_text", this).css({
-            opacity: "1",
-            zIndex: "99"
-        }); /////////// css ////////////
         $("#cursor").addClass("drag_C");
     }, function (e) {
         e.stopPropagation();
-        $(".first_exhibit_text", this).css({
-            opacity: "0"
-        }); /////////// css ////////////
         $("#cursor").addClass("drag_C");
     }); //////////  hover ////////////////
 
